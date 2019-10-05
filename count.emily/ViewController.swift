@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var number:Float = 0.0
+    var number:Double = 0.000
     
 
     @IBOutlet weak var label: UILabel!
@@ -28,21 +28,36 @@ class ViewController: UIViewController {
         number = number - 1
         label.text = String(format:"%.3f",number)
     }
+    @IBAction func multiple(_ sender: Any) {
+        number = number * 2
+        label.text = String(format:"%.3f",number)
+        print(number)
+    }
+    @IBAction func devide(_ sender: Any) {
+        number = number / 2
+        label.text = String(format:"%.3f",number)
+    }
+    
     @IBAction func squareRoot(_ sender: Any) {
         number = number.squareRoot()
         label.text = String(format:"%.3f",number)
     }
     @IBAction func pai(_ sender: Any) {
-        number = number * 3.1415
+        number = number * Double.pi
         label.text = String(format:"%.3f",number)
     }
-    @IBAction func sin(_ sender: Any) {
-        number = sin(Double(number) * M_PI / 180.0)
+    @IBAction func sinButton(_ sender: Any) {
+        number = sin(number * Double.pi / 180.0)
+        label.text = String(format:"%.3f",number)
         
     }
-    @IBAction func cos(_ sender: Any) {
+    @IBAction func cosButton(_ sender: Any) {
+        number = cos(number * Double.pi / 180.0)
+        label.text = String(format:"%.3f",number)
     }
-    @IBAction func tan(_ sender: Any) {
+    @IBAction func tanButton(_ sender: Any) {
+        number = tan(number * Double.pi / 180.0)
+        label.text = String(format:"%.3f",number)
     }
     @IBAction func double(_ sender: Any) {
         number = number * number
@@ -52,13 +67,5 @@ class ViewController: UIViewController {
         number = 0.000
         label.text = String(number)
     }
-    
-    
-    
-    
-    
-    
-
-
 }
 
