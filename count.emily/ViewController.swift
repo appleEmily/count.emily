@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         label.text = String(format:"%.3f",number)
     }
     @IBAction func sin(_ sender: Any) {
+        number = sin(Double(number) * M_PI / 180.0)
         
     }
     @IBAction func cos(_ sender: Any) {
